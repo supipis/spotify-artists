@@ -41,7 +41,7 @@ function App() {
 }
 
 function CountryList(props) {
-  let [countries, setCountries] = useState(['Sri Lanka', 'Pakistan'])
+  let [countries, setCountries] = useState(['Sri Lanka', 'India', 'Pakistan', 'Nepal', 'Bhutan', 'Bangladesh', 'Maldives'])
   return <ul id='country'>
 
     {countries.map(country => {
