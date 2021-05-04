@@ -41,8 +41,9 @@ function App() {
 }
 
 function CountryList(props) {
-  let [countries, setCountries] = useState(['Sri Lanka', 'India', 'Nepal', 'Bangladesh', 'Maldives', 'Pakistan', 'Bhutan'])
+  let [countries, setCountries] = useState(['Sri Lanka', 'Pakistan'])
   return <ul id='country'>
+
     {countries.map(country => {
       return <li className={props.selectedCountry == country ? 'selected' : ''} onClick={() => props.onCountrySelect(country)} id='countryList'>{country}</li>
     })}
@@ -105,8 +106,10 @@ function TracksList(props) {
   return <div className='music-track'>
     <ul id='tracks'>
       {tracks.map(track => {
-        return <li id='track-list'>{track.name}
+        return <div className='player'>
+          <li id='track-list'>{track.name} <br />
           <ReactAudioPlayer src={track.preview_url} controls /></li>
+        </div>
       })}
     </ul>
   </div>
